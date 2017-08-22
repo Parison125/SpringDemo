@@ -20,8 +20,8 @@
 	</bean>
 
 	<bean name="pointC" class="org.parison.cool.Point">
-		<property name="x" value="10"/>
-		<property name="y" value="0"/>		
+		<property name="x" value="21"/>
+		<property name="y" value="22"/>
 	</bean>
 
    <bean name="cercle" class="org.parison.cool.Circle">
