@@ -9,9 +9,8 @@
 <!-- 	<bean id="triangle" class="org.parison.cool.Triangle" autowire="byName"/>
  -->
 	<bean name="PointA" class="org.parison.cool.Point">
-		<qualifier value="circleRelated" />
 		<property name="x" value="1"/>
-		<property name="y" value="1"/>		
+		<property name="y" value="2"/>
 	</bean>
 
   	<bean name="pointB" class="org.parison.cool.Point">
@@ -19,14 +18,11 @@
 		<property name="y" value="10"/>		
 	</bean>
 
-	<bean name="pointC" class="org.parison.cool.Point">
+	<bean name="center" class="org.parison.cool.Point">
 		<property name="x" value="21"/>
 		<property name="y" value="22"/>
 	</bean>
 
-   <bean name="cercle" class="org.parison.cool.Circle">
-    	<property name="radius" value="5" />    	
-   </bean>
-   		   
 	<context:annotation-config />
+	<context:component-scan base-package="org.parison.cool" />
 </beans>

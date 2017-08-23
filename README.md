@@ -27,3 +27,13 @@ the bean is being initialized by the bean factory
 Specify a destruction method of a bean. This method is call before
 the bean is  removed by the bean factory. Need to resgister
 shutdown hook to the applicationContext in order for this method to be called
+
+@Component : used upon a class declaration to specify that the class
+is a bean. But with this, you cannot create but one bean instance of
+the class. Not like in xml configuration you can declare many beans
+instance of the same class. PS : do not forget to put 	<context:component-scan base-package="" />
+in xml conf for spring to know in which package to look for beans.
+@Service, @Controller, @Repository can also be used instead of @Component.
+These are same but each tells spring the "role" of the bean and helps the developper
+to understand in which layer the bean is used in the application.
+

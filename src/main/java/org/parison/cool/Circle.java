@@ -2,13 +2,17 @@ package org.parison.cool;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
+@Component
 public class Circle implements Shape {
-	
+
+	@Value("12")
 	private int radius;
 	
 	private Point center;
@@ -18,7 +22,7 @@ public class Circle implements Shape {
 		return center;
 	}
 	
-	@Resource(name="pointC")
+	@Resource
 	public void setCenter(Point center) {
 		this.center = center;
 	}
