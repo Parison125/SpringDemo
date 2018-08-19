@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+
+import javax.annotation.Resource;
 
 public class Triangle implements Shape{
 
@@ -18,18 +21,24 @@ public class Triangle implements Shape{
 	public Point getPointA() {
 		return pointA;
 	}
+
+	@Resource(name="pointA")
 	public void setPointA(Point pointA) {
 		this.pointA = pointA;
 	}
 	public Point getPointB() {
 		return pointB;
 	}
+
+	@Resource(name="pointB")
 	public void setPointB(Point pointB) {
 		this.pointB = pointB;
 	}
 	public Point getPointC() {
 		return pointC;
 	}
+
+	@Resource(name="pointC")
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
 	}

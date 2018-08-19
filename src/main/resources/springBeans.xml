@@ -8,21 +8,28 @@
 	
 <!-- 	<bean id="triangle" class="org.parison.cool.Triangle" autowire="byName"/>
  -->
-	<bean name="PointA" class="org.parison.cool.Point">
-		<property name="x" value="1"/>
-		<property name="y" value="2"/>
+	<bean name="pointA" class="org.parison.cool.Point">
+		<property name="x" value="${pointA.X}"/>
+		<property name="y" value="${pointA.Y}"/>
 	</bean>
 
   	<bean name="pointB" class="org.parison.cool.Point">
-		<property name="x" value="0"/>
-		<property name="y" value="10"/>		
+		<property name="x" value="${pointB.X}"/>
+		<property name="y" value="${pointB.X}"/>
 	</bean>
 
-	<bean name="center" class="org.parison.cool.Point">
+	<bean name="pointC" class="org.parison.cool.Point">
 		<property name="x" value="21"/>
 		<property name="y" value="22"/>
 	</bean>
 
+	<bean name="triangle" class="org.parison.cool.Triangle" />
+
 	<context:annotation-config />
+
 	<context:component-scan base-package="org.parison.cool" />
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<property name="locations" value="classpath:points.properties"/>
+	</bean>
 </beans>
