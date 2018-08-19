@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 @Component
 public class Circle implements Shape {
 
-	@Value("12")
+
 	private int radius;
 	
 	private Point center;
@@ -31,6 +31,7 @@ public class Circle implements Shape {
 		return radius;
 	}
 
+	@Value("12")
 	public void setRadius(int radius) {
 		this.radius = radius;
 	}
