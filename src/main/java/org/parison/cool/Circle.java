@@ -3,11 +3,14 @@ package org.parison.cool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.util.Locale;
 
 @Component
 public class Circle implements Shape {
@@ -17,7 +20,17 @@ public class Circle implements Shape {
 	
 	private Point center;
 	
-	
+	private MessageSource lettre;
+
+	public MessageSource getLettre() {
+		return lettre;
+	}
+
+	@Autowired
+	public void setLettre(MessageSource lettre) {
+		this.lettre = lettre;
+	}
+
 	public Point getCenter() {
 		return center;
 	}
@@ -39,7 +52,8 @@ public class Circle implements Shape {
 	public void draw() {
 		System.out.println(" Circle drawn with radius "+getRadius());
 		System.out.println("The center is ("+getCenter().getX()+", "+getCenter().getY()+")");
-
+		System.out.println("The message is : "+this.lettre.getMessage("greeting",null,"default message", null));
+		System.out.println(this.lettre.getMessage("salution",new Object[]{"Parison","Ravalomanda"},"Default message",null));
 	}
 
 	@PostConstruct

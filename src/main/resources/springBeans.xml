@@ -25,11 +25,20 @@
 
 	<bean name="triangle" class="org.parison.cool.Triangle" />
 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<property name="locations" value="classpath:points.properties"/>
+	</bean>
+
+	<bean id="lettre" class="org.springframework.context.support.ResourceBundleMessageSource" >
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+			</list>
+		</property>
+	</bean>
+
 	<context:annotation-config />
 
 	<context:component-scan base-package="org.parison.cool" />
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
-		<property name="locations" value="classpath:points.properties"/>
-	</bean>
 </beans>
